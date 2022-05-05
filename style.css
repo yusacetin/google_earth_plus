@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    background-color: rgb(32,32,32);
+    color: rgb(230,230,230);
+}
+
+body{
+    padding: 0 1em;
+    border: 1px solid white;
+    width: 20em;
+    height: auto;
+}
+
+.info-text{
+    font-size: 1.2em;
+    display: block;
+    margin: 0.4em 0;
+}
+
+.small-info-text{
+    display: block;
+    font-size: 0.8em;
+    margin: 0.4em 0;
+}
