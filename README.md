@@ -20,7 +20,7 @@ You can keep your left hand at its natural home row position on the keyboard and
 Edit the constants at the top of the content_script.js file.
 
 ### More features?
-Don't count on it. Feel free to fork. 
+Don't count on it. Feel free to fork.
 
 ### License?
 Zlib. See [https://opensource.org/licenses/Zlib](https://opensource.org/licenses/Zlib).
