@@ -7,6 +7,7 @@ Do you love Google Earth but hate how you have to click the street view button a
 * Go to [chrome://extensions](chrome://extensions)
 * Click "Load unpacked" at the top left
 * Select the directory containing the files
+
 Note: You may need to press Z every time you open Google Earth in a new tab to make some of the shortcuts work.
 
 ### What does it do?
