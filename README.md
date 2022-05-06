@@ -1,4 +1,4 @@
-### (Very) Small but impactful enhancements to Google Earth Web for Chrome
+### Shortcut modifications to Google Earth Web for Chrome
 Do you love Google Earth but hate how you have to click the street view button at the bottom right of the screen again every time you click the button all the way at the top left of the screen to quit street view? Do you hate how it doesn't reset to top-north view afterwards so you also have to click the compass button? Do you hate how you have to move your hand all over the keyboard to use some of the shortcuts? Then you might like this Chrome extension.
 
 ### Installation
