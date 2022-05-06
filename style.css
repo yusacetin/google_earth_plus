@@ -6,7 +6,7 @@
 
 body{
     padding: 0 1em;
-    border: 1px solid white;
+    border: 2px solid white;
     width: 20em;
     height: auto;
 }
@@ -19,6 +19,17 @@ body{
 
 .small-info-text{
     display: block;
-    font-size: 0.8em;
+    font-size: 1em;
+    margin: 0.5em 0;
+}
+
+.title-text{
+    display: block;
+    font-size: 1.4em;
     margin: 0.4em 0;
+    font-weight: bold;
+}
+
+.red-text{
+    color: rgb(240, 82, 82);
 }
