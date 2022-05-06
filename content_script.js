@@ -1,6 +1,6 @@
 // shortcuts that simulate clicks
 const svkeys = ["d", "e"]; // shortcuts for street view
-const randomkeys = ["a"]; // shortcuts for random location aka I'm Feeling Lucky
+const randomkeys = ["q"]; // shortcuts for random location aka I'm Feeling Lucky
 const voyagerkeys = ["g"]; // shortcut for voyager (mapping this to "v" by default might be more intuitive but i never use this feature so i want measure to be more accessible (see measurekey below))
 
 // shortcuts that modify existing shortcuts
