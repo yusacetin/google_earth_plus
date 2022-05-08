@@ -26,5 +26,4 @@ Don't count on it. Feel free to fork.
 Zlib. See [https://opensource.org/licenses/Zlib](https://opensource.org/licenses/Zlib).
 
 ### Known issues
-* Most of the time some shortcuts don't work at first. Simply press Z once the page loads to fix.
 * If your computer is slow, disabling certain shortcuts when search is on might lag and remove focus from search. Wait for a short while after opening search or first press something that isn't mapped to a shortcut as a workaround. If your computer is slow enough to be impacted by this you are probably used to stuff like this.
