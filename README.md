@@ -8,7 +8,6 @@ Do you love Google Earth but hate how you have to click the street view button a
 * Click "Load unpacked" at the top left
 * Select the directory containing the files
 
-Note: You may need to press Z every time you open Google Earth in a new tab to make some of the shortcuts work.
 
 ### What does it do?
 The main reason I wanted to create this was to make entering and exiting street view mouse-click-free. The extension maps the F key to the top-north view shortcut and the D and E keys to the street view toggle button by default. You can also press D or E while in street view mode to quit it and go back to map view mode. It also modifies many other shortcuts that are scattered all over the keyboard to bring them near the left hand home row so you can use them without lifting your hand.
