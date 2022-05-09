@@ -1,35 +1,80 @@
 *{
     margin: 0;
-    background-color: rgb(32,32,32);
-    color: rgb(230,230,230);
 }
 
 body{
     padding: 0 1em;
     border: 2px solid white;
-    width: 20em;
+    width: 24em;
     height: auto;
+    background-color: rgb(32,32,32);
 }
 
 .info-text{
+    color: rgb(230,230,230);
     font-size: 1.2em;
-    display: block;
     margin: 0.4em 0;
 }
 
 .small-info-text{
+    color: rgb(230,230,230);
     display: block;
     font-size: 1em;
     margin: 0.5em 0;
 }
 
 .title-text{
+    color: rgb(230,230,230);
     display: block;
-    font-size: 1.4em;
-    margin: 0.4em 0;
+    font-size: 2em;
+    margin: 0.1em 0;
     font-weight: bold;
 }
 
-.red-text{
-    color: rgb(240, 82, 82);
+.small-title{
+    color: rgb(230,230,230);
+    display: block;
+    font-size: 1.5em;
+    margin: 0.1em 0;
+}
+
+.smaller-title{
+    color: rgb(230,230,230);
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 0.4em;
+}
+
+.input{
+    width: 3em;
+    height: 1.5em;
+    margin: auto 0.5em;
+    color: rgb(16,16,16);
+    border-radius: 5px;
+    border: 1px solid grey;
+    outline: none;
+}
+
+.multi-input{
+    width: 6em;
+}
+
+.input:focus{
+    border: 1px solid rgb(70, 102, 247);
+}
+
+button{
+    width: 100%;
+}
+
+#savebutton{
+    margin-top: 1em;
+}
+
+#resetbutton{
+    margin: 0.5em 0;
+}
+
+.space{
+    height: 0.8em;
 }

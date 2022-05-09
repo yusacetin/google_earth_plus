@@ -1,20 +1,16 @@
 // shortcuts that simulate clicks
-const svkeys = ["d", "e"]; // shortcuts for street view
-const randomkeys = ["q"]; // shortcuts for random location aka I'm Feeling Lucky
-const voyagerkeys = ["g"]; // shortcut for voyager (mapping this to "v" by default might be more intuitive but i never use this feature so i want measure to be more accessible (see measurekey below))
+var svkeys = ["d", "e"]; // shortcuts for street view
+var randomkeys = ["q"]; // shortcuts for random location aka I'm Feeling Lucky
+var voyagerkeys = ["g"]; // shortcut for voyager (mapping this to "v" by default might be more intuitive but i never use this feature so i want measure to be more accessible (see measurekey below))
 
 // shortcuts that modify existing shortcuts
 // i don't know if these can be assigned to multiple keys with this method
-const northkey = "f"; // shortcut for top-north view
-const measurekey = "v"; // shortcut for distance measurement
-const searchkey = "s"; // shortcut for search
-const mapstylekey = "w"; // shortcut for map style
-const projectskey = "p"; // shortcut for projects (i never use it so i don't want it to occupy valuable space)
-const settingskey = "t"; // shortcut for settings
-
-// if the modified shortcuts don't work automatically, press this once
-// when the page loads to register them again
-const fixkey = "z";
+var northkey = "f"; // shortcut for top-north view
+var measurekey = "v"; // shortcut for distance measurement
+var searchkey = "s"; // shortcut for search
+var mapstylekey = "w"; // shortcut for map style
+var projectskey = "p"; // shortcut for projects (i never use it so i don't want it to occupy valuable space)
+var settingskey = "t"; // shortcut for settings
 
 var north_success = false;
 var toolbar_success = false;
@@ -48,10 +44,62 @@ document.onkeydown = function(e){
         voyagerbutton.click();
         return;
     }
+}
 
-    else if(e.key.toLowerCase() == fixkey){
-        registerModifiedShortcuts();
-    }
+async function getKeyValuesAndCallRegister(){
+    return new Promise((resolve, reject)=>{
+        try{
+            chrome.storage.local.get([
+                "northkey",
+                "svkeys",
+                "measurekey",
+                "searchkey",
+                "randomkeys",
+                "mapstylekey",
+                "voyagerkeys",
+                "projectskey",
+                "settingskey"],
+                function(value){
+                    if (value["northkey"] != undefined){
+                        northkey = value["northkey"];
+                    }
+
+                    if (value["svkeys"] != undefined){
+                        svkeys = value["svkeys"].split(",");
+                    }
+
+                    if (value["measurekey"] != undefined){
+                        measurekey = value["measurekey"];
+                    }
+
+                    if (value["searchkey"] != undefined){
+                        searchkey = value["searchkey"];
+                    }
+
+                    if (value["randomkeys"] != undefined){
+                        randomkeys = value["randomkeys"].split(",");
+                    }
+
+                    if (value["mapstylekey"] != undefined){
+                        mapstylekey = value["mapstylekey"];
+                    }
+
+                    if (value["voyagerkeys"] != undefined){
+                        voyagerkeys = value["voyagerkeys"].split(",");
+                    }
+
+                    if (value["projectskey"] != undefined){
+                        projectskey = value["projectskey"];
+                    }
+
+                    if (value["settingskey"] != undefined){
+                        settingskey = value["settingskey"];
+                    }
+
+                    registerModifiedShortcuts();
+                });
+        }catch(exc){}
+    });
 }
 
 function registerModifiedShortcuts(){
@@ -70,7 +118,6 @@ function registerNorthKey(){
     try{
         const app = document.getElementsByTagName("earth-app")[0].shadowRoot;
         const compass = app.getElementById("compass").shadowRoot;
-        // getElementsByTagName doesn't work so we iterate over the children to check
         for (let i=0; i<compass.childNodes.length; i++){
             if (compass.childNodes[i].tagName.toLowerCase() == "earth-kb-shortcut"){
                 if (compass.childNodes[i].getAttribute("keys").toLowerCase() == "n"){
@@ -138,4 +185,4 @@ function registerMenuShortcuts(){
     }
 }
 
-registerModifiedShortcuts();
+getKeyValuesAndCallRegister();

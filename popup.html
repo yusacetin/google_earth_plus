@@ -2,19 +2,60 @@
     <head>
         <meta charset="UTF-8"/>
         <link rel="stylesheet" href="style.css"/>
+        <script src="popup.js"></script>
     </head>
     <body>
-        <span class="title-text">Default Keys</span>
-        <span class="info-text">Top-North angle: F</span>
-        <span class="info-text">Street view: D, E</span>
-        <span class="info-text">Measure distance: V</span>
-        <span class="info-text">Search: S</span>
-        <span class="info-text">Random location: Q</span>
-        <span class="info-text">Map style: W</span>
-        <span class="info-text">Voyager: G</span>
-        <span class="info-text">Projects: P</span>
-        <span class="info-text">Settings: T</span>
-        <span class="info-text red-text">If some shortcuts don't work at first, press Z once to register them again.</span>
-        <span class="small-info-text">Credits: Yuşa Çetin</span>
-    </body>
+        <span class="title-text">Shortcuts</span>
+        <div class="row"><span class="info-text">Input lowercase only</span></div>
+        <span class="small-title"># Multiple keys supported #</span>
+        <span class="smaller-title">Use "," to seperate keys, do not use spaces</span>
+        
+        <div class="row">
+            <span class="info-text">Street view:</span>
+            <input id="svkeys" class="input multi-input" type="text" value="d,e">
+        </div>
+        <div class="row">
+            <span class="info-text">Random location:</span>
+            <input id="randomkeys" class="input multi-input" type="text" value="q">
+        </div>
+        <div class="row">
+            <span class="info-text">Voyager:</span>
+            <input id="voyagerkeys" class="input multi-input" type="text" value="g">
+        </div>
+        <span class="small-title"># Single key only #</span>
+        <div class="row">
+            <span class="info-text">Top-North angle:</span>
+            <input id="northkey" maxlength="1" class="input single-input" type="text" value="f">
+        </div>
+        <div class="row">
+            <span class="info-text">Measure distance:</span>
+            <input id="measurekey" maxlength="1" class="input single-input" type="text" value="v">
+        </div>
+        <div class="row">
+            <span class="info-text">Search:</span>
+            <input id="searchkey" maxlength="1" class="input single-input" type="text" value="s">
+        </div>
+        <div class="row">
+            <span class="info-text">Map style:</span>
+            <input id="mapstylekey" maxlength="1" class="input single-input" type="text" value="w">
+        </div>
+        <div class="row">
+            <span class="info-text">Projects:</span>
+            <input id="projectskey" maxlength="1" class="input single-input" type="text" value="p">
+        </div>
+        <div class="row">
+            <span class="info-text">Settings:</span>
+            <input id="settingskey" maxlength="1" class="input single-input" type="text" value="t">
+        </div>
+        <div class="row">
+            <button id="savebutton">Save</button>
+        </div>
+        <div class="row">
+            <button id="resetbutton">Reset to Dev Defaults</button>
+        </div>
+        <div class="row">
+            <span class="info-text">Changes take effect after reloading Earth.</span>
+        </div>
+        <div class="space"></div>
+        </body>
 </html>
