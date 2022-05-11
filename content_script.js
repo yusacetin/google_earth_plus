@@ -11,6 +11,8 @@ var searchkey = "s"; // shortcut for search
 var mapstylekey = "w"; // shortcut for map style
 var projectskey = "p"; // shortcut for projects (i never use it so i don't want it to occupy valuable space)
 var settingskey = "t"; // shortcut for settings
+var topdownkey = "u"; //shortcut for top-down view, default
+var resetviewkey = "r"; //shortcut for reset view, default
 
 var north_success = false;
 var toolbar_success = false;
@@ -58,7 +60,9 @@ async function getKeyValuesAndCallRegister(){
                 "mapstylekey",
                 "voyagerkeys",
                 "projectskey",
-                "settingskey"],
+                "settingskey",
+                "topdownkey",
+                "resetviewkey"],
                 function(value){
                     if (value["northkey"] != undefined){
                         northkey = value["northkey"];
@@ -96,6 +100,14 @@ async function getKeyValuesAndCallRegister(){
                         settingskey = value["settingskey"];
                     }
 
+                    if (value["topdownkey"] != undefined){
+                        topdownkey = value["topdownkey"];
+                    }
+
+                    if (value["resetviewkey"] != undefined){
+                        resetviewkey = value["resetviewkey"];
+                    }
+
                     registerModifiedShortcuts();
                 });
         }catch(exc){}
@@ -104,7 +116,7 @@ async function getKeyValuesAndCallRegister(){
 
 function registerModifiedShortcuts(){
     if (!north_success){
-        registerNorthKey();
+        registerNavKeys();
     }
     if (!toolbar_success){
         registerToolbarShortcuts();
@@ -114,23 +126,30 @@ function registerModifiedShortcuts(){
     }
 }
 
-function registerNorthKey(){
+function registerNavKeys(){
     try{
         const app = document.getElementsByTagName("earth-app")[0].shadowRoot;
         const compass = app.getElementById("compass").shadowRoot;
         for (let i=0; i<compass.childNodes.length; i++){
             if (compass.childNodes[i].tagName.toLowerCase() == "earth-kb-shortcut"){
-                if (compass.childNodes[i].getAttribute("keys").toLowerCase() == "n"){
-                    compass.childNodes[i].setAttribute("keys", northkey);
-                    break;
+                switch (compass.childNodes[i].getAttribute("keys").toLowerCase()){
+                    case "n":
+                        compass.childNodes[i].setAttribute("keys", northkey);
+                        break;
+                    case "u":
+                        compass.childNodes[i].setAttribute("keys", topdownkey);
+                        break;
+                    case "r":
+                        compass.childNodes[i].setAttribute("keys", resetviewkey);
+                        break;
                 }
             }
         }
         north_success = true;
-        console.log("North key register successful");
+        console.log("Navigation keys register successful");
     }catch(exc){
         console.log("trying again in 1 second");
-        setTimeout(registerNorthKey, 1000);
+        setTimeout(registerNavKeys, 1000);
     }
 }
 
@@ -157,7 +176,7 @@ function registerToolbarShortcuts(){
             }
         }
         toolbar_success = true;
-        console.log("Toolbar register successful");
+        console.log("Toolbar keys register successful");
     }catch(exc){
         console.log("trying again in 1 second");
         setTimeout(registerToolbarShortcuts, 1000);
@@ -178,7 +197,7 @@ function registerMenuShortcuts(){
             }
         }
         menu_success = true;
-        console.log("Menu register successful");
+        console.log("Menu keys register successful");
     }catch(exc){
         console.log("trying again in 1 second");
         setTimeout(registerMenuShortcuts, 1000);

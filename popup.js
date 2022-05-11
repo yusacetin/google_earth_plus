@@ -1,13 +1,16 @@
 function savekeys(){
-    const northkeyValue = document.getElementById("northkey").value;
-    const svkeyValue = document.getElementById("svkeys").value;
-    const measurekeyValue = document.getElementById("measurekey").value;
-    const searchkeyValue = document.getElementById("searchkey").value;
-    const randomkeysValue = document.getElementById("randomkeys").value;
-    const mapstylekeyValue = document.getElementById("mapstylekey").value;
-    const voyagerkeysValue = document.getElementById("voyagerkeys").value;
-    const projectskeyValue = document.getElementById("projectskey").value;
-    const settingskeyValue = document.getElementById("settingskey").value;
+    const northkeyValue = document.getElementById("northkey").value.toLowerCase();
+    const svkeyValue = document.getElementById("svkeys").value.toLowerCase();
+    const measurekeyValue = document.getElementById("measurekey").value.toLowerCase();
+    const searchkeyValue = document.getElementById("searchkey").value.toLowerCase();
+    const randomkeysValue = document.getElementById("randomkeys").value.toLowerCase();
+    const mapstylekeyValue = document.getElementById("mapstylekey").value.toLowerCase()
+    const voyagerkeysValue = document.getElementById("voyagerkeys").value.toLowerCase();
+    const projectskeyValue = document.getElementById("projectskey").value.toLowerCase();
+    const settingskeyValue = document.getElementById("settingskey").value.toLowerCase();
+
+    const topdownkeyValue = document.getElementById("topdownkey").value.toLowerCase();
+    const resetviewkeyValue = document.getElementById("resetviewkey").value.toLowerCase();
 
     chrome.storage.local.set({"northkey": northkeyValue}, ()=>{});
     chrome.storage.local.set({"svkeys": svkeyValue}, ()=>{});
@@ -18,6 +21,8 @@ function savekeys(){
     chrome.storage.local.set({"voyagerkeys": voyagerkeysValue}, ()=>{});
     chrome.storage.local.set({"projectskey": projectskeyValue}, ()=>{});
     chrome.storage.local.set({"settingskey": settingskeyValue}, ()=>{});
+    chrome.storage.local.set({"topdownkey": topdownkeyValue}, ()=>{});
+    chrome.storage.local.set({"resetviewkey": resetviewkeyValue}, ()=>{});
 }
 
 function resetkeys(){
@@ -30,6 +35,8 @@ function resetkeys(){
     document.getElementById("voyagerkeys").value = "g";
     document.getElementById("projectskey").value = "p";
     document.getElementById("settingskey").value = "t";
+    document.getElementById("topdownkey").value = "u";
+    document.getElementById("resetviewkey").value = "r";
 }
 
 // reference: https://stackoverflow.com/a/57551361
@@ -45,7 +52,9 @@ async function getAndDisplayStoredValues(){
                 "mapstylekey",
                 "voyagerkeys",
                 "projectskey",
-                "settingskey"],
+                "settingskey",
+                "topdownkey",
+                "resetviewkey"],
                 function(value){
                     if (value["northkey"] == undefined){
                         document.getElementById("northkey").value = "f";
@@ -108,6 +117,20 @@ async function getAndDisplayStoredValues(){
                         chrome.storage.local.set({"settingskey": "t"});
                     }else{
                         document.getElementById("settingskey").value = value["settingskey"];
+                    }
+
+                    if (value["topdownkey"] == undefined){
+                        document.getElementById("topdownkey").value = "u";
+                        chrome.storage.local.set({"topdownkey": "u"});
+                    }else{
+                        document.getElementById("topdownkey").value = value["topdownkey"];
+                    }
+
+                    if (value["resetviewkey"] == undefined){
+                        document.getElementById("resetviewkey").value = "r";
+                        chrome.storage.local.set({"resetviewkey": "r"});
+                    }else{
+                        document.getElementById("resetviewkey").value = value["resetviewkey"];
                     }
                 });
         }catch(exc){}
