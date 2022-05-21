@@ -2,57 +2,80 @@
     <head>
         <meta charset="UTF-8"/>
         <link rel="stylesheet" href="style.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&display=swap" rel="stylesheet">
         <script src="popup.js"></script>
     </head>
     <body>
         <span class="title-text">Shortcuts</span>
         <span class="small-title"># Multiple keys supported #</span>
         <span class="smaller-title">Use "," to separate keys, do not use spaces</span>
-        
-        <div class="row">
+
+        <div class="row box">
             <span class="info-text">Street view:</span>
-            <input id="svkeys" class="input multi-input" type="text" value="d,e">
+              <div class="textbox">
+                <input id="svkeys" class="input multi-input" type="text" value="d,e">
+              </div>
         </div>
-        <div class="row">
+        <div class="row box">
             <span class="info-text">Random location:</span>
-            <input id="randomkeys" class="input multi-input" type="text" value="q">
+              <div class="textbox">
+                <input id="randomkeys" class="input multi-input clearfix" type="text" value="q">
+              </div>
         </div>
-        <div class="row">
+        <div class="row box">
             <span class="info-text">Voyager:</span>
-            <input id="voyagerkeys" class="input multi-input" type="text" value="g">
+            <div class="textbox">
+              <input id="voyagerkeys" class="input multi-input clearfix" type="text" value="g">
+            </div>
         </div>
         <span class="small-title"># Single key only #</span>
-        <div class="row">
-            <span class="info-text">Top-North angle:</span>
-            <input id="northkey" maxlength="1" class="input single-input" type="text" value="f">
+        <div class="row box">
+          <span class="info-text">Top-North angle:</span>
+            <div class="textbox">
+              <input id="northkey" maxlength="1" class="input single-input clearfix" type="text" value="f">
+            </div>
         </div>
-        <div class="row">
+        <div class="row box">
             <span class="info-text">Reset angle:</span>
-            <input id="resetviewkey" maxlength="1" class="input single-input" type="text" value="r">
+            <div class="textbox">
+              <input id="resetviewkey" maxlength="1" class="input single-input clearfix" type="text" value="r">
+            </div>
         </div>
-        <div class="row">
+        <div class="row box">
             <span class="info-text">Top-Down angle:</span>
-            <input id="topdownkey" maxlength="1" class="input single-input" type="text" value="u">
+            <div class="textbox">
+              <input id="topdownkey" maxlength="1" class="input single-input clearfix" type="text" value="u">
+            </div>
         </div>
-        <div class="row">
+        <div class="row box">
             <span class="info-text">Measure distance:</span>
-            <input id="measurekey" maxlength="1" class="input single-input" type="text" value="v">
+            <div class="textbox">
+              <input id="measurekey" maxlength="1" class="input single-input clearfix" type="text" value="v">
+            </div>
         </div>
-        <div class="row">
+        <div class="row box">
             <span class="info-text">Search:</span>
-            <input id="searchkey" maxlength="1" class="input single-input" type="text" value="s">
-        </div>
-        <div class="row">
+            <div class="textbox">
+              <input id="searchkey" maxlength="1" class="input single-input clearfix" type="text" value="s">
+            </div>
+            </div>
+        <div class="row box">
             <span class="info-text">Map style:</span>
-            <input id="mapstylekey" maxlength="1" class="input single-input" type="text" value="w">
+            <div class="textbox">
+              <input id="mapstylekey" maxlength="1" class="input single-input clearfix" type="text" value="w">
+            </div>
         </div>
-        <div class="row">
+        <div class="row box">
             <span class="info-text">Projects:</span>
-            <input id="projectskey" maxlength="1" class="input single-input" type="text" value="p">
+            <div class="textbox">
+              <input id="projectskey" maxlength="1" class="input single-input clearfix" type="text" value="p">
+            </div>
         </div>
-        <div class="row">
+        <div class="row box">
             <span class="info-text">Settings:</span>
-            <input id="settingskey" maxlength="1" class="input single-input" type="text" value="t">
+            <div class="textbox">
+              <input id="settingskey" maxlength="1" class="input single-input" type="text" value="t">
+            </div>
         </div>
         <div class="row">
             <button id="savebutton">Save</button>
