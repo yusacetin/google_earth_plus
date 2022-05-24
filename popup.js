@@ -39,6 +39,20 @@ function resetkeys(){
     document.getElementById("resetviewkey").value = "r";
 }
 
+function resetofficialkeys(){
+    document.getElementById("northkey").value = "n";
+    document.getElementById("svkeys").value = "";
+    document.getElementById("measurekey").value = "shift+m";
+    document.getElementById("searchkey").value = "/";
+    document.getElementById("randomkeys").value = "";
+    document.getElementById("mapstylekey").value = "m";
+    document.getElementById("voyagerkeys").value = "";
+    document.getElementById("projectskey").value = "p";
+    document.getElementById("settingskey").value = ",";
+    document.getElementById("topdownkey").value = "u";
+    document.getElementById("resetviewkey").value = "r";
+}
+
 // reference: https://stackoverflow.com/a/57551361
 async function getAndDisplayStoredValues(){
     return new Promise((resolve, reject)=>{
@@ -140,6 +154,9 @@ async function getAndDisplayStoredValues(){
 window.onload = ()=>{
     document.getElementById("savebutton").addEventListener("click", ()=>{
         savekeys();
+    });
+    document.getElementById("resetofficialbutton").addEventListener("click", ()=>{
+        resetofficialkeys();
     });
     document.getElementById("resetbutton").addEventListener("click", ()=>{
         resetkeys();

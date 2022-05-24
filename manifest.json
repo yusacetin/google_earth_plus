@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
-    "version": "2.0.3",
-    "version_name": "2.0.3 beta",
+    "version": "2.1.0",
+    "version_name": "2.1.0 beta",
     "name": "Custom Shortcuts for Google Earth Web (Beta)",
     "description": "Modify keyboard shortcuts to make browsing Google Earth Web more fluid. Under development. Probably.",
     "permissions": [

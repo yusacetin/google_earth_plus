@@ -7,8 +7,13 @@
     </head>
     <body>
         <span class="title-text">Shortcuts</span>
+
+        <div class="row">
+          <span class="info-text">Changes take effect after reloading Earth.</span>
+        </div>
+
         <span class="small-title"># Multiple keys supported #</span>
-        <span class="smaller-title">Use "," to separate keys, do not use spaces</span>
+        <span class="smaller-title">Use "," to separate keys, do not use spaces. Key combinations are not supported.</span>
 
         <div class="row box">
             <span class="info-text">Street view:</span>
@@ -28,66 +33,64 @@
               <input id="voyagerkeys" class="input multi-input clearfix" type="text" value="g">
             </div>
         </div>
-        <span class="small-title"># Single key only #</span>
+        <span class="small-title"># Single key/combination only #</span>
+        <span class="smaller-title">Use "+" to create combinations with ctrl, shift, or alt.</span>
         <div class="row box">
           <span class="info-text">Top-North angle:</span>
             <div class="textbox">
-              <input id="northkey" maxlength="1" class="input single-input clearfix" type="text" value="f">
+              <input id="northkey" class="input single-input clearfix" type="text" value="f">
             </div>
         </div>
         <div class="row box">
             <span class="info-text">Reset angle:</span>
             <div class="textbox">
-              <input id="resetviewkey" maxlength="1" class="input single-input clearfix" type="text" value="r">
+              <input id="resetviewkey" class="input single-input clearfix" type="text" value="r">
             </div>
         </div>
         <div class="row box">
             <span class="info-text">Top-Down angle:</span>
             <div class="textbox">
-              <input id="topdownkey" maxlength="1" class="input single-input clearfix" type="text" value="u">
+              <input id="topdownkey" class="input single-input clearfix" type="text" value="u">
             </div>
         </div>
         <div class="row box">
             <span class="info-text">Measure distance:</span>
             <div class="textbox">
-              <input id="measurekey" maxlength="1" class="input single-input clearfix" type="text" value="v">
+              <input id="measurekey" class="input single-input clearfix" type="text" value="v">
             </div>
         </div>
         <div class="row box">
             <span class="info-text">Search:</span>
             <div class="textbox">
-              <input id="searchkey" maxlength="1" class="input single-input clearfix" type="text" value="s">
+              <input id="searchkey" class="input single-input clearfix" type="text" value="s">
             </div>
             </div>
         <div class="row box">
             <span class="info-text">Map style:</span>
             <div class="textbox">
-              <input id="mapstylekey" maxlength="1" class="input single-input clearfix" type="text" value="w">
+              <input id="mapstylekey" class="input single-input clearfix" type="text" value="w">
             </div>
         </div>
         <div class="row box">
             <span class="info-text">Projects:</span>
             <div class="textbox">
-              <input id="projectskey" maxlength="1" class="input single-input clearfix" type="text" value="p">
+              <input id="projectskey" class="input single-input clearfix" type="text" value="p">
             </div>
         </div>
         <div class="row box">
             <span class="info-text">Settings:</span>
             <div class="textbox">
-              <input id="settingskey" maxlength="1" class="input single-input" type="text" value="t">
+              <input id="settingskey" class="input single-input" type="text" value="t">
             </div>
         </div>
         <div class="row">
             <button id="savebutton">Save</button>
         </div>
         <div class="row">
+          <button id="resetofficialbutton">Reset to Google Defaults</button>
+      </div>
+        <div class="row">
             <button id="resetbutton">Reset to Dev Defaults</button>
-        </div>
-        <div class="row">
-            <span class="info-text">Changes take effect after reloading Earth.</span>
-        </div>
-        <div class="row">
-            <span class="info-text">Key combinations are not supported at the moment.</span>
         </div>
         <div class="space"></div>
         </body>

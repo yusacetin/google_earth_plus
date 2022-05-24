@@ -5,7 +5,7 @@
 body{
     padding: 0 1em;
     border: 2px solid white;
-    width: 24em;
+    width: 26em;
     height: auto;
     background-color: rgb(32,32,32);
     background-position: center;
@@ -72,43 +72,39 @@ body{
 }
 
 .box:nth-child(even){
-  background-color: rgb(0,0,0,0.3);
+  background-color: rgb(50, 50, 50);
   padding-right: 0em;
 }
 
 button{
   width: 100%;
-  outline: 0;
-  grid-gap: 8px;
-  align-items: center;
-  background: rgb(238, 250, 255);
+  background: rgb(240, 242, 243);
   border: 1px solid #000;
   border-radius: 4px;
-  cursor: pointer;
   display: inline-flex;
-  flex-shrink: 0;
   font-size: 1.2em;
-  gap: 8px;
   justify-content: center;
   line-height: 1em;
-  overflow: hidden;
   padding: 4px 12px;
   text-decoration: none;
-  text-overflow: ellipsis;
   transition: all .14s ease-out;
-  white-space: nowrap;
 }
 
 button:hover{
-  background-color: rgb(181, 190, 194);
+  background-color: rgb(189, 192, 194);
 }
 
 button:active{
-  background-color: rgb(132, 139, 143);
+  background-color: rgb(138, 141, 143);
 }
 
 #savebutton{
     margin-top: 1em;
+    margin-bottom: 0.2em;
+}
+
+#resetofficialbutton{
+    margin: 0.2em 0;
 }
 
 #resetbutton{
