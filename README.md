@@ -18,4 +18,5 @@ Don't count on it. Feel free to fork.
 Zlib. See [https://opensource.org/licenses/Zlib](https://opensource.org/licenses/Zlib).
 
 ### Known issues
+* Shortcuts are disabled when the search window is opened to avoid unwanted behavior, but the method I used to detect whether a search is being made is faulty (just checking whether the word "search" is in the URL) and continues to block shortcuts even if the search window is hidden, as long as the search is not explicitly canceled by pressing the cross in the search bar and then hiding the search window.
 * If your computer is slow, disabling certain shortcuts when search is on might lag and remove focus from search. Wait for a short while after opening search or first press something that isn't mapped to a shortcut as a workaround. If your computer is slow enough to be impacted by this you are probably used to stuff like this.
