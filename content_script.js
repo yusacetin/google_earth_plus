@@ -1,3 +1,19 @@
+/*
+This file is part of Custom Shortcuts for Google Earth Web.
+
+Custom Shortcuts for Google Earth Web is free software: you can redistribute it
+and/or modify it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or (at your option)
+any later version.
+
+Custom Shortcuts for Google Earth Web is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with Custom Shortcuts
+for Google Earth Web. If not, see <https://www.gnu.org/licenses/>.
+*/
+
 // shortcuts that simulate clicks
 var svkeys = ["d", "e"]; // shortcuts for street view
 var randomkeys = ["q"]; // shortcuts for random location aka I'm Feeling Lucky
@@ -19,10 +35,6 @@ var toolbar_success = false;
 var menu_success = false;
 
 document.onkeydown = function(e){
-    if (window.location.href.indexOf("search") >= 0){
-        return;
-    }
-
     if (svkeys.indexOf(e.key.toLowerCase()) >= 0){
         const app = document.getElementsByTagName("earth-app")[0].shadowRoot;
         const sv = app.getElementById("street-view").shadowRoot;
