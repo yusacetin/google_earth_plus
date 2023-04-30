@@ -5,10 +5,11 @@ The main reason I wanted to create this was to make entering and exiting street 
 You can keep your left hand at its natural home row position on the keyboard and save yourself many mouse clicks to make your Google Earth experience much smoother.
 
 ### Installation
+Currently, the source is ahead of the Web Store version because I haven't tested the current version too much, aside from the shortcuts that I frequently use.
 #### From source
 * Clone or download the files to a directory.
 * Make sure developer mode is enabled in Chrome
-* Go to [chrome://extensions](chrome://extensions)
+* Go to chrome://extensions
 * Click "Load unpacked" at the top left
 * Select the directory containing the files
 
