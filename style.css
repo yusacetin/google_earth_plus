@@ -130,3 +130,7 @@ button:active{
 .space{
     height: 0.7em;
 }
+
+a {
+    color: rgb(60, 140, 240);
+}

@@ -14,7 +14,7 @@ You should have received a copy of the GNU General Public License along with Cus
 for Google Earth Web. If not, see <https://www.gnu.org/licenses/>.
 */
 
-function savekeys(){
+function saveKeys(){
     const northkeyValue = document.getElementById("northkey").value.toLowerCase();
     const svkeyValue = document.getElementById("svkeys").value.toLowerCase();
     const measurekeyValue = document.getElementById("measurekey").value.toLowerCase();
@@ -24,9 +24,11 @@ function savekeys(){
     const voyagerkeysValue = document.getElementById("voyagerkeys").value.toLowerCase();
     const projectskeyValue = document.getElementById("projectskey").value.toLowerCase();
     const settingskeyValue = document.getElementById("settingskey").value.toLowerCase();
-
     const topdownkeyValue = document.getElementById("topdownkey").value.toLowerCase();
     const resetviewkeyValue = document.getElementById("resetviewkey").value.toLowerCase();
+    const gridlinesKeysValue = document.getElementById("gridlinesKeys").value.toLowerCase();
+    const closeWindowsKeysValue = document.getElementById("closeWindowsKeys").value.toLowerCase();
+    const focusKeysValue = document.getElementById("focusKeys").value.toLowerCase();
 
     chrome.storage.local.set({"northkey": northkeyValue}, ()=>{});
     chrome.storage.local.set({"svkeys": svkeyValue}, ()=>{});
@@ -39,34 +41,39 @@ function savekeys(){
     chrome.storage.local.set({"settingskey": settingskeyValue}, ()=>{});
     chrome.storage.local.set({"topdownkey": topdownkeyValue}, ()=>{});
     chrome.storage.local.set({"resetviewkey": resetviewkeyValue}, ()=>{});
+    chrome.storage.local.set({"gridlinesKeys": gridlinesKeysValue}, ()=>{});
+    chrome.storage.local.set({"closeWindowsKeys": closeWindowsKeysValue}, ()=>{});
+    chrome.storage.local.set({"focusKeys": focusKeysValue}, ()=>{});
 }
 
-function resetkeys(){
-    document.getElementById("northkey").value = "f";
+function resetKeys(){
+    document.getElementById("northkey").value = "r";
     document.getElementById("svkeys").value = "e,d";
     document.getElementById("measurekey").value = "v";
     document.getElementById("searchkey").value = "s";
-    document.getElementById("randomkeys").value = "q";
+    document.getElementById("randomkeys").value = "b";
     document.getElementById("mapstylekey").value = "w";
-    document.getElementById("voyagerkeys").value = "g";
+    document.getElementById("voyagerkeys").value = "5";
     document.getElementById("projectskey").value = "p";
     document.getElementById("settingskey").value = "t";
     document.getElementById("topdownkey").value = "u";
-    document.getElementById("resetviewkey").value = "r";
+    document.getElementById("resetviewkey").value = "f";
+    document.getElementById("gridlinesKeys").value = "q";
+    document.getElementById("closeWindowsKeys").value = "g";
+    document.getElementById("focusKeys").value = "l";
 }
 
-function resetofficialkeys(){
+function resetOfficialKeys(){
     document.getElementById("northkey").value = "n";
-    document.getElementById("svkeys").value = "";
     document.getElementById("measurekey").value = "shift+m";
     document.getElementById("searchkey").value = "/";
-    document.getElementById("randomkeys").value = "";
     document.getElementById("mapstylekey").value = "m";
-    document.getElementById("voyagerkeys").value = "";
     document.getElementById("projectskey").value = "p";
     document.getElementById("settingskey").value = ",";
     document.getElementById("topdownkey").value = "u";
     document.getElementById("resetviewkey").value = "r";
+    document.getElementById("focusKeys").value = "g";
+    document.getElementById("closeWindowsKeys").value = "";
 }
 
 // reference: https://stackoverflow.com/a/57551361
@@ -84,11 +91,14 @@ async function getAndDisplayStoredValues(){
                 "projectskey",
                 "settingskey",
                 "topdownkey",
-                "resetviewkey"],
+                "resetviewkey",
+                "gridlinesKeys",
+                "closeWindowsKeys",
+                "focusKeys"],
                 function(value){
                     if (value["northkey"] == undefined){
-                        document.getElementById("northkey").value = "f";
-                        chrome.storage.local.set({"northkey": "f"}, ()=>{});
+                        document.getElementById("northkey").value = "r";
+                        chrome.storage.local.set({"northkey": "r"}, ()=>{});
                     }else{
                         document.getElementById("northkey").value = value["northkey"];
                     }
@@ -115,8 +125,8 @@ async function getAndDisplayStoredValues(){
                     }
 
                     if (value["randomkeys"] == undefined){
-                        document.getElementById("randomkeys").value = "q";
-                        chrome.storage.local.set({"randomkeys": "q"});
+                        document.getElementById("randomkeys").value = "b";
+                        chrome.storage.local.set({"randomkeys": "b"});
                     }else{
                         document.getElementById("randomkeys").value = value["randomkeys"];
                     }
@@ -129,8 +139,8 @@ async function getAndDisplayStoredValues(){
                     }
 
                     if (value["voyagerkeys"] == undefined){
-                        document.getElementById("voyagerkeys").value = "g";
-                        chrome.storage.local.set({"voyagerkeys": "g"});
+                        document.getElementById("voyagerkeys").value = "5";
+                        chrome.storage.local.set({"voyagerkeys": "5"});
                     }else{
                         document.getElementById("voyagerkeys").value = value["voyagerkeys"];
                     }
@@ -157,10 +167,31 @@ async function getAndDisplayStoredValues(){
                     }
 
                     if (value["resetviewkey"] == undefined){
-                        document.getElementById("resetviewkey").value = "r";
-                        chrome.storage.local.set({"resetviewkey": "r"});
+                        document.getElementById("resetviewkey").value = "f";
+                        chrome.storage.local.set({"resetviewkey": "f"});
                     }else{
                         document.getElementById("resetviewkey").value = value["resetviewkey"];
+                    }
+
+                    if (value["gridlinesKeys"] == undefined){
+                        document.getElementById("gridlinesKeys").value = "q";
+                        chrome.storage.local.set({"gridlinesKeys": "q"});
+                    }else{
+                        document.getElementById("gridlinesKeys").value = value["gridlinesKeys"];
+                    }
+
+                    if (value["closeWindowsKeys"] == undefined){
+                        document.getElementById("closeWindowsKeys").value = "g";
+                        chrome.storage.local.set({"closeWindowsKeys": "g"});
+                    }else{
+                        document.getElementById("closeWindowsKeys").value = value["closeWindowsKeys"];
+                    }
+
+                    if (value["focusKeys"] == undefined){
+                        document.getElementById("focusKeys").value = "l";
+                        chrome.storage.local.set({"focusKeys": "l"});
+                    }else{
+                        document.getElementById("focusKeys").value = value["focusKeys"];
                     }
                 });
         }catch(exc){}
@@ -169,13 +200,13 @@ async function getAndDisplayStoredValues(){
 
 window.onload = ()=>{
     document.getElementById("savebutton").addEventListener("click", ()=>{
-        savekeys();
+        saveKeys();
     });
     document.getElementById("resetofficialbutton").addEventListener("click", ()=>{
-        resetofficialkeys();
+        resetOfficialKeys();
     });
     document.getElementById("resetbutton").addEventListener("click", ()=>{
-        resetkeys();
+        resetKeys();
     });
     getAndDisplayStoredValues();
 }

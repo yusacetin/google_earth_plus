@@ -25,89 +25,123 @@ for Google Earth Web. If not, see <https://www.gnu.org/licenses/>.
         <span class="title-text">Shortcuts</span>
 
         <div class="row">
-          <span class="info-text">Changes take effect after reloading Earth.</span>
+            <span class="info-text">Click the save button to save changes. Changes take effect after reloading Earth. You can use '+'' to create combinations with ctrl, shift, or alt; and ',' to set multiple shortcuts (options marked with '<sup>1</sup>' do not support multiple shortcuts). Options marked with '*' do not work reliably. Visit the <a href="https://github.com/yusacetin/google_earth_plus" target="_blank">project homepage</a> for more information.</span>
         </div>
 
-        <span class="small-title"># Multiple keys supported #</span>
-        <span class="smaller-title">Use "," to separate keys, do not use spaces. Key combinations are not supported.</span>
+        <br/>
 
+        <!-- Shortcut options -->
         <div class="row box">
             <span class="info-text">Street view:</span>
-              <div class="textbox">
+            <div class="textbox">
                 <input id="svkeys" class="input multi-input" type="text" value="d,e">
-              </div>
-        </div>
-        <div class="row box">
-            <span class="info-text">Random location:</span>
-              <div class="textbox">
-                <input id="randomkeys" class="input multi-input clearfix" type="text" value="q">
-              </div>
-        </div>
-        <div class="row box">
-            <span class="info-text">Voyager:</span>
-            <div class="textbox">
-              <input id="voyagerkeys" class="input multi-input clearfix" type="text" value="g">
             </div>
         </div>
-        <span class="small-title"># Single key/combination only #</span>
-        <span class="smaller-title">Use "+" to create combinations with ctrl, shift, or alt.</span>
+
         <div class="row box">
-          <span class="info-text">Top-North angle:</span>
+            <span class="info-text">Reset view<sup>1</sup>:</span>
             <div class="textbox">
-              <input id="northkey" class="input single-input clearfix" type="text" value="f">
+                <input id="resetviewkey" class="input single-input clearfix" type="text" value="f">
             </div>
         </div>
+
         <div class="row box">
-            <span class="info-text">Reset angle:</span>
+            <span class="info-text">Close information windows:</span>
             <div class="textbox">
-              <input id="resetviewkey" class="input single-input clearfix" type="text" value="r">
+                <input id="closeWindowsKeys" class="input single-input clearfix" type="text" value="g">
             </div>
         </div>
+
         <div class="row box">
-            <span class="info-text">Top-Down angle:</span>
+            <span class="info-text">Toggle gridlines<sup>*</sup>:</span>
             <div class="textbox">
-              <input id="topdownkey" class="input single-input clearfix" type="text" value="u">
+                <input id="gridlinesKeys" class="input single-input clearfix" type="text" value="q">
             </div>
         </div>
-        <div class="row box">
-            <span class="info-text">Measure distance:</span>
-            <div class="textbox">
-              <input id="measurekey" class="input single-input clearfix" type="text" value="v">
-            </div>
-        </div>
+
         <div class="row box">
             <span class="info-text">Search:</span>
             <div class="textbox">
-              <input id="searchkey" class="input single-input clearfix" type="text" value="s">
+                <input id="searchkey" class="input single-input clearfix" type="text" value="s">
             </div>
+        </div>
+
+        <div class="row box">
+            <span class="info-text">Measure distance:</span>
+            <div class="textbox">
+                <input id="measurekey" class="input single-input clearfix" type="text" value="v">
             </div>
+        </div>
+
+        <div class="row box">
+            <span class="info-text">Random location:</span>
+            <div class="textbox">
+                <input id="randomkeys" class="input multi-input clearfix" type="text" value="b">
+            </div>
+        </div>
+
+        <div class="row box">
+            <span class="info-text">Voyager:</span>
+            <div class="textbox">
+                <input id="voyagerkeys" class="input multi-input clearfix" type="text" value="5">
+            </div>
+        </div>
+
+        <div class="row box">
+            <span class="info-text">Reset to north:</span>
+            <div class="textbox">
+                <input id="northkey" class="input single-input clearfix" type="text" value="r">
+            </div>
+        </div>
+
+        <div class="row box">
+            <span class="info-text">Top-down view<sup>1</sup>:</span>
+            <div class="textbox">
+                <input id="topdownkey" class="input single-input clearfix" type="text" value="u">
+            </div>
+        </div>
+
         <div class="row box">
             <span class="info-text">Map style:</span>
             <div class="textbox">
-              <input id="mapstylekey" class="input single-input clearfix" type="text" value="w">
+                <input id="mapstylekey" class="input single-input clearfix" type="text" value="w">
             </div>
         </div>
+
         <div class="row box">
             <span class="info-text">Projects:</span>
             <div class="textbox">
-              <input id="projectskey" class="input single-input clearfix" type="text" value="p">
+                <input id="projectskey" class="input single-input clearfix" type="text" value="p">
             </div>
         </div>
+
         <div class="row box">
             <span class="info-text">Settings:</span>
             <div class="textbox">
-              <input id="settingskey" class="input single-input" type="text" value="t">
+                <input id="settingskey" class="input single-input" type="text" value="t">
             </div>
         </div>
+
+        <div class="row box">
+            <span class="info-text">Focus globe<sup>1</sup>:</span>
+            <div class="textbox">
+                <input id="focusKeys" class="input single-input" type="text" value="l">
+            </div>
+        </div>
+
+        <!-- Buttons -->
         <div class="row">
             <button id="savebutton">Save</button>
         </div>
+
         <div class="row">
           <button id="resetofficialbutton">Reset to Google Defaults</button>
-      </div>
-        <div class="row">
-            <button id="resetbutton">Reset to Dev Defaults</button>
         </div>
+
+        <div class="row">
+            <button id="resetbutton">Reset to Developer Defaults</button>
+        </div>
+
         <div class="space"></div>
         </body>
 </html>
