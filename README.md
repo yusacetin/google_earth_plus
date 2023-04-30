@@ -8,7 +8,7 @@ You can keep your left hand at its natural home row position on the keyboard and
 #### From source
 * Clone or download the files to a directory.
 * Make sure developer mode is enabled in Chrome
-* Go to chrome://extensions
+* Go to [chrome://extensions](chrome://extensions)
 * Click "Load unpacked" at the top left
 * Select the directory containing the files
 
