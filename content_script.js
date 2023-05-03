@@ -280,7 +280,7 @@ async function getKeyValuesAndCallRegister(){
                     }
 
                     if (value["randomkeys"] != undefined){
-                        randomKeys = value["randomkeys"].split(",");
+                        randomkeys = value["randomkeys"].split(",");
                     }
 
                     if (value["mapstylekey"] != undefined){
