@@ -183,22 +183,22 @@ function checkAndRun(e, keyList, starti, callback){
 
 // Update modifier key down statuses
 document.onkeyup = function(e) {
-    if (e.code == "ControlLeft") {
+    if (e.code == "ControlLeft" || e.code == "ControlRight") {
         ctrlDown = false;
-    }else if (e.code == "ShiftLeft") {
+    }else if (e.code == "ShiftLeft" || e.code == "ShiftRight") {
         shiftDown = false;
-    }else if (e.code == "AltLeft") {
+    }else if (e.code == "AltLeft" || e.code == "AltRight") {
         altDown = false;
     }
 }
 
 document.onkeydown = function(e){
     // update modifier key down statuses
-    if (e.code == "ControlLeft") {
+    if (e.code == "ControlLeft" || e.code == "ControlRight") {
         ctrlDown = true;
-    }else if (e.code == "ShiftLeft") {
+    }else if (e.code == "ShiftLeft" || e.code == "ShiftRight") {
         shiftDown = true;
-    }else if (e.code == "AltLeft") {
+    }else if (e.code == "AltLeft" || e.code == "AltRight") {
         altDown = true;
     }
 
