@@ -14,21 +14,25 @@ You should have received a copy of the GNU General Public License along with Cus
 for Google Earth Web. If not, see <https://www.gnu.org/licenses/>.
 */
 
+function removeSpaces(str){
+    return str.replace(/\s+/g, '');
+}
+
 function saveKeys(){
-    const northkeyValue = document.getElementById("northkey").value.toLowerCase();
-    const svkeyValue = document.getElementById("svkeys").value.toLowerCase();
-    const measurekeyValue = document.getElementById("measurekey").value.toLowerCase();
-    const searchkeyValue = document.getElementById("searchkey").value.toLowerCase();
-    const randomkeysValue = document.getElementById("randomkeys").value.toLowerCase();
-    const mapstylekeyValue = document.getElementById("mapstylekey").value.toLowerCase()
-    const voyagerkeysValue = document.getElementById("voyagerkeys").value.toLowerCase();
-    const projectskeyValue = document.getElementById("projectskey").value.toLowerCase();
-    const settingskeyValue = document.getElementById("settingskey").value.toLowerCase();
-    const topdownkeyValue = document.getElementById("topdownkey").value.toLowerCase();
-    const resetviewkeyValue = document.getElementById("resetviewkey").value.toLowerCase();
-    const gridlinesKeysValue = document.getElementById("gridlinesKeys").value.toLowerCase();
-    const closeWindowsKeysValue = document.getElementById("closeWindowsKeys").value.toLowerCase();
-    const focusKeysValue = document.getElementById("focusKeys").value.toLowerCase();
+    const northkeyValue = removeSpaces(document.getElementById("northkey").value.toLowerCase());
+    const svkeyValue = removeSpaces(document.getElementById("svkeys").value.toLowerCase());
+    const measurekeyValue = removeSpaces(document.getElementById("measurekey").value.toLowerCase());
+    const searchkeyValue = removeSpaces(document.getElementById("searchkey").value.toLowerCase());
+    const randomkeysValue = removeSpaces(document.getElementById("randomkeys").value.toLowerCase());
+    const mapstylekeyValue = removeSpaces(document.getElementById("mapstylekey").value.toLowerCase());
+    const voyagerkeysValue = removeSpaces(document.getElementById("voyagerkeys").value.toLowerCase());
+    const projectskeyValue = removeSpaces(document.getElementById("projectskey").value.toLowerCase());
+    const settingskeyValue = removeSpaces(document.getElementById("settingskey").value.toLowerCase());
+    const topdownkeyValue = removeSpaces(document.getElementById("topdownkey").value.toLowerCase());
+    const resetviewkeyValue = removeSpaces(document.getElementById("resetviewkey").value.toLowerCase());
+    const gridlinesKeysValue = removeSpaces(document.getElementById("gridlinesKeys").value.toLowerCase());
+    const closeWindowsKeysValue = removeSpaces(document.getElementById("closeWindowsKeys").value.toLowerCase());
+    const focusKeysValue = removeSpaces(document.getElementById("focusKeys").value.toLowerCase());
 
     chrome.storage.local.set({"northkey": northkeyValue}, ()=>{});
     chrome.storage.local.set({"svkeys": svkeyValue}, ()=>{});
