@@ -312,7 +312,7 @@ async function getKeyValuesAndCallRegister(){
                     }
 
                     if (value["closeWindowsKeys"] != undefined){
-                        closeWindowsKeys = value["closeWindowsKeys"].split(",");
+                        closekeys = value["closeWindowsKeys"].split(",");
                     }
 
                     if (value["focusKeys"] != undefined){
