@@ -23,13 +23,13 @@ var svkeys = ["d", "e"]; // shortcuts for street view
 var randomkeys = ["b"]; // shortcuts for random location aka I'm Feeling Lucky
 var voyagerkeys = ["5"]; // shortcut for voyager (mapping this to "v" by default might be more intuitive but i never use this feature so i want measure to be more accessible (see measurekey below))
 var gridlinesKeys = ["q"]; // shortcuts to toggle gridlines
-var closekeys = ["g"]; // shortcuts to close pop ups
+var closekeys = ["w"]; // shortcuts to close pop ups
 
 // Native shortcuts
 var northKeys = ["r"];
 var measureKeys = ["v"];
 var searchKeys = ["s"];
-var mapStyleKeys = ["w"];
+var mapStyleKeys = ["g"];
 var projectsKeys = ["p"];
 var settingsKeys = ["t"];
 var topDownKeys = ["u"];

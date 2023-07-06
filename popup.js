@@ -56,14 +56,14 @@ function resetKeys(){
     document.getElementById("measurekey").value = "v";
     document.getElementById("searchkey").value = "s";
     document.getElementById("randomkeys").value = "b";
-    document.getElementById("mapstylekey").value = "w";
+    document.getElementById("mapstylekey").value = "g";
     document.getElementById("voyagerkeys").value = "5";
     document.getElementById("projectskey").value = "p";
     document.getElementById("settingskey").value = "t";
     document.getElementById("topdownkey").value = "u";
     document.getElementById("resetviewkey").value = "f";
     document.getElementById("gridlinesKeys").value = "q";
-    document.getElementById("closeWindowsKeys").value = "g";
+    document.getElementById("closeWindowsKeys").value = "w";
     document.getElementById("focusKeys").value = "l";
 }
 
@@ -136,8 +136,8 @@ async function getAndDisplayStoredValues(){
                     }
 
                     if (value["mapstylekey"] == undefined){
-                        document.getElementById("mapstylekey").value = "w";
-                        chrome.storage.local.set({"mapstylekey": "w"});
+                        document.getElementById("mapstylekey").value = "g";
+                        chrome.storage.local.set({"mapstylekey": "g"});
                     }else{
                         document.getElementById("mapstylekey").value = value["mapstylekey"];
                     }
@@ -185,8 +185,8 @@ async function getAndDisplayStoredValues(){
                     }
 
                     if (value["closeWindowsKeys"] == undefined){
-                        document.getElementById("closeWindowsKeys").value = "g";
-                        chrome.storage.local.set({"closeWindowsKeys": "g"});
+                        document.getElementById("closeWindowsKeys").value = "w";
+                        chrome.storage.local.set({"closeWindowsKeys": "w"});
                     }else{
                         document.getElementById("closeWindowsKeys").value = value["closeWindowsKeys"];
                     }
