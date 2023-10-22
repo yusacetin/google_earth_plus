@@ -1,3 +1,6 @@
+## Obsoletion
+Google updated Google Earth at around October 2023 and this extension no longer works. DOM elements can't be accessed in the new version so I made a new repository that uses system-level shortcuts to simulate clicks: https://github.com/yusacetin/google_earth_maps_scripts
+
 ## Custom Keyboard Shortcuts for Google Earth Web
 The main reason I wanted to create this was to make entering and exiting street view mouse-click-free. I always use the default orientation so I also wanted to be able to reset the view without moving my hands. The extension maps the F key to the reset view shortcut and the D and E keys to the street view toggle button by default. You can also press D or E while in street view mode to quit it and go back to map view mode. It also modifies many other shortcuts that are scattered all over the keyboard to bring them near the left hand home row (for QWERTY keyboards) so you can use them without lifting your hand. You can easily customize the keys from the extension pop up.
 
